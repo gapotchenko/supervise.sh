@@ -34,3 +34,6 @@ This approach is often used in Docker containers and portable applications to ma
 An alternative is to rely on the operating system’s init system (such as `systemd`).
 However, using `systemd` or similar tools increases resource usage and reduces portability — especially in lightweight or containerized environments.
 `supervise.sh` provides a simple, dependency-free way to achieve the same goal in a fully portable manner.
+
+Another alternative is not to use a supervisor at all but then your application may become brittle due to omnipresent subtle bugs in sub-services or limited system resources.
+A lightweight supervisor helps to improve resilience with minimal overhead.
