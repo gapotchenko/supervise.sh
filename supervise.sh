@@ -10,10 +10,10 @@ NAME=supervise.sh
 VERSION=1.0.0
 
 help() {
-    echo "$NAME  Version $VERSION
+    echo "$NAME v$VERSION
 Copyright © Gapotchenko and Contributors
 
-Ensures that the specified command is always running.
+Ensures that the specified command stays running.
 
 Usage:
   $NAME [-d <delay>] [-m <max-retries>] -- command [args...]
@@ -24,7 +24,7 @@ Options:
   -m --max-retries  Maximum number of restart attempts before giving up.
                     Use 0 for unlimited retries (default).
 
-Project page: https://github.com/gapotchenko/gnu-tk"
+Project page: https://github.com/gapotchenko/supervise.sh"
 }
 
 # -----------------------------------------------------------------------------
@@ -43,11 +43,11 @@ while [ $# -gt 0 ]; do
         exit
         ;;
     -d | --delay)
-        OPT_DELAY="$2"
+        OPT_DELAY=$2
         shift 2
         ;;
     -m | --max-retries)
-        OPT_MAX_RETRIES="$2"
+        OPT_MAX_RETRIES=$2
         shift 2
         ;;
     --)
@@ -68,12 +68,16 @@ Try '$NAME --help' for more information." >&2
 fi
 
 # -----------------------------------------------------------------------------
-# Core Functionality
+# Auxilary Functions
 # -----------------------------------------------------------------------------
 
 log() {
     printf '%s: %s: %s\n' "$NAME" "$(date '+%Y-%m-%d %H:%M:%S')" "$*" >&2
 }
+
+# -----------------------------------------------------------------------------
+# Core Functionality
+# -----------------------------------------------------------------------------
 
 RETRY_COUNT=0
 
