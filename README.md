@@ -30,13 +30,14 @@ trap 'trap - INT TERM; kill -TERM -$$ 2>/dev/null; wait' INT TERM
 wait
 ```
 
-This approach is typically used in Docker containers and portable applications to
-make them resilient to process failures.
+This approach is typically used in Docker containers and portable applications
+to make them resilient to process failures.
 
 ## Installation
 
-No installation is required. Simply download the script from the [releases page](https://github.com/gapotchenko/supervise.sh/releases)
-and include it in your application directory.
+No installation is required. Simply download the script from the
+[releases page](https://github.com/gapotchenko/supervise.sh/releases) and
+include it in your application directory.
 
 ## Why Use a Process Supervisor?
 
