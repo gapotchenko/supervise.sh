@@ -7,8 +7,8 @@ making it extremely portable.
 
 ## Usage
 
-A common use case is to use `supervise.sh` in an application's main script to
-manage and restart its sub-services:
+A common use case is to include `supervise.sh` in an application's main script
+to manage and restart its sub-services:
 
 ```sh
 #!/bin/sh
