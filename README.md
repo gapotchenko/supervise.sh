@@ -15,7 +15,7 @@ to manage and restart its sub-services:
 
 set -eu
 
-# Ensure all child processes are terminated when this script is terminated.
+# Terminate all child processes when this script is terminated.
 trap 'trap - INT TERM; kill -TERM -$$ 2>/dev/null; wait' INT TERM
 
 # Run Deno services.
