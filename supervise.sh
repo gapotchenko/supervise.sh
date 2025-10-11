@@ -2,7 +2,6 @@
 
 # supervise.sh - a lightweight process-level supervisor.
 # Ensures that the specified command stays running.
-#
 # https://github.com/gapotchenko/supervise.sh
 
 set -eu
