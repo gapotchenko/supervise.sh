@@ -30,7 +30,7 @@ trap 'trap - INT TERM; kill -TERM -$$ 2>/dev/null; wait' INT TERM
 wait
 ```
 
-This approach is often used in Docker containers and portable applications to
+This approach is typically used in Docker containers and portable applications to
 make them resilient to process failures.
 
 ## Why Use a Process Supervisor?
