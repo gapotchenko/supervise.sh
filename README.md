@@ -50,22 +50,3 @@ Another alternative is not to use a supervisor at all but then your application
 may become brittle due to limited system resources or subtle omnipresent bugs in
 sub-services. A lightweight supervisor helps to improve resilience with minimal
 overhead.
- 
-## Quick Reference
-
-### supervise.sh
-
-`supervise.sh` command-line tool provides process supervision capabilities and
-ensures that the specified command stays running for as long as the supervisor itself is active.
-
-#### Usage
-
-```
-  supervise.sh [-d <delay>] [-m <max-retries>] -- command [args...]
-
-Options:
-  -d --delay        Wait time in seconds before restarting the command.
-                    The default delay is 2 seconds.
-  -m --max-retries  Maximum number of restart attempts before giving up.
-                    Use 0 for unlimited retries (default).
-```
