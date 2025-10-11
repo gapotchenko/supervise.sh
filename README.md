@@ -43,5 +43,5 @@ the same goal in a fully portable manner.
 
 Another alternative is not to use a supervisor at all but then your application
 may become brittle due to limited system resources or subtle omnipresent bugs in
-sub-services. A lightweight process-level supervisor helps to improve resilience
-with minimal overhead.
+sub-services. A lightweight supervisor helps to improve resilience with minimal
+overhead.
