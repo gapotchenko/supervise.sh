@@ -10,7 +10,7 @@ set -eu
 # -----------------------------------------------------------------------------
 
 NAME=supervise.sh
-VERSION=1.1.0
+VERSION=1.1.1-beta
 
 help() {
     echo "$NAME v$VERSION
@@ -19,7 +19,7 @@ Copyright © Gapotchenko and Contributors
 Ensures that the specified command stays running.
 
 Usage:
-  $NAME [-d <delay>] [-m <max-retries>] -- command [args...]
+  $NAME [-d <delay>] [-m <max-retries>] [-p <path>] -- command [args...]
 
 Options:
   -d --delay        Wait time in seconds before restarting the command.
