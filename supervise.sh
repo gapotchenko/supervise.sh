@@ -25,7 +25,10 @@ Options:
   -d --delay        Wait time in seconds before restarting the command.
                     The default delay is 2 seconds.
   -m --max-retries  Maximum number of restart attempts before giving up.
-                    Use 0 for unlimited retries (default)."
+                    Use 0 for unlimited retries (default).
+  -p --path         Set the working directory for the command.
+                    The command will be executed from this path.
+                    Defaults to the current directory."
 }
 
 # -----------------------------------------------------------------------------
@@ -35,6 +38,7 @@ Options:
 # Default configuration
 OPT_DELAY=2
 OPT_MAX_RETRIES=0
+OPT_PATH=
 
 # Parse options
 while [ $# -gt 0 ]; do
@@ -49,6 +53,14 @@ while [ $# -gt 0 ]; do
         ;;
     -m | --max-retries)
         OPT_MAX_RETRIES=$2
+        shift 2
+        ;;
+    -p | --path)
+        OPT_PATH=$2
+        if [ -z "$OPT_PATH" ]; then
+            echo "$NAME: working directory path cannot be empty." >&2
+            exit 1
+        fi
         shift 2
         ;;
     --)
@@ -79,6 +91,11 @@ log() {
 # -----------------------------------------------------------------------------
 # Core Functionality
 # -----------------------------------------------------------------------------
+
+if [ -n "$OPT_PATH" ]; then
+    # Set working directory.
+    cd "$OPT_PATH"
+fi
 
 RETRY_COUNT=0
 
