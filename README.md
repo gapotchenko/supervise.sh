@@ -13,6 +13,7 @@ to manage and restart its sub-services:
 ```sh
 #!/bin/sh
 
+# Terminate the script on a first error, disallow unbound variables.
 set -eu
 
 # Terminate all child processes when this script is terminated.
