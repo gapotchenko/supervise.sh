@@ -1,5 +1,11 @@
 # What's New in `supervise.sh`
 
+## 1.1.1-beta
+
+Release date: not released yet
+
+- Improved help message
+
 ## 1.1.0
 
 Release date: February 22, 2026
