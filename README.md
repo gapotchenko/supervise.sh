@@ -5,7 +5,7 @@ command stays running as long as the supervisor is running. It is implemented as
 a pure POSIX shell script with no dependencies and no need for compilation,
 making it extremely portable.
 
-## Usage
+## Quick Start
 
 A common use case is to include `supervise.sh` in an application's main script
 to manage and restart its sub-services:
@@ -32,6 +32,24 @@ wait
 
 This approach is typically used in Docker containers and portable applications
 to make them resilient to process failures.
+
+## Command-Line Interface
+
+The supported command-line options are described below:
+
+```
+Usage:
+  supervise.sh [-d <delay>] [-m <max-retries>] [-p <path>] -- command [args...]
+
+Options:
+  -d --delay        Wait time in seconds before restarting the command.
+                    The default delay is 2 seconds.
+  -m --max-retries  Maximum number of restart attempts before giving up.
+                    Use 0 for unlimited retries (default).
+  -p --path         Set the working directory for the command.
+                    The command will be executed from this path.
+                    Defaults to the current directory.
+```
 
 ## Installation
 
