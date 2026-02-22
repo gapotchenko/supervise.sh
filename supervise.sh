@@ -10,7 +10,7 @@ set -eu
 # -----------------------------------------------------------------------------
 
 NAME=supervise.sh
-VERSION=1.0.1
+VERSION=1.1.0
 
 help() {
     echo "$NAME v$VERSION
