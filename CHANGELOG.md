@@ -4,6 +4,7 @@
 
 Release date: not released yet
 
+- Terminate child process when supervisor is terminated
 - Improved help message
 
 ## 1.1.0

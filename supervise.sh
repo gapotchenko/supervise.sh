@@ -92,6 +92,9 @@ log() {
 # Core Functionality
 # -----------------------------------------------------------------------------
 
+# Terminate all child processes when this script is terminated.
+trap 'trap - INT TERM; kill -TERM -$$ 2>/dev/null; wait' INT TERM
+
 if [ -n "$OPT_PATH" ]; then
     # Set working directory.
     cd "$OPT_PATH"
